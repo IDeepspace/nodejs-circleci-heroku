@@ -1,0 +1,9 @@
+.appLayout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrap {
+  flex-grow: 1;
+}

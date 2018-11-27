@@ -1,0 +1,10 @@
+{
+  "name": "Start cbs-lite-app on Heroku: Node.js",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [],
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

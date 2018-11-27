@@ -1,0 +1,36 @@
+$main-background-color: white;
+$main-text-color: #1a1a1a;
+$modal-border-color: #808285;
+$modal-button: #89b77f;
+$offering-blue: #1a73ba;
+$capability-purple: #6a2569;
+$archetype-red: #b11c54;
+$competency-orange: #f78f31;
+$competency-add-button: #4a90e2;
+
+* {
+  box-sizing: border-box;
+  &:before, &:after{
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: 'Open Sans',sans-serif;
+  color: $main-text-color;
+}
+
+body, div, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+li {
+  list-style: none;
+}
+

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<div>
+  <div>
+    CBS Lite
+  </div>
+  <div>
+    <img
+      alt="avatar"
+      src="test-file-stub"
+    />
+    <div>
+      xinchen
+    </div>
+  </div>
+</div>
+`;

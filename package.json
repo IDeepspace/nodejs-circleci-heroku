@@ -1,0 +1,59 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/cli": "^7.1.5",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "winston": "^3.1.0"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "babel-compile": "babel app -d dist",
+    "start": "node ./dist/index.js",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "jest --coverage",
+    "eject": "react-scripts eject",
+    "lint": "eslint src test",
+    "heroku-postbuild": "npm run build && npm run babel-compile"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/config/jest/fileMock.js",
+      "^.+\\.(scss|css)$": "<rootDir>/test/config/jest/styleMock.js",
+      "^root_path$": "<rootDir>/src"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-no-unsafe-innerhtml": "^1.0.16",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-security": "^1.4.0",
+    "node-sass": "^4.10.0",
+    "react-test-renderer": "^16.6.3"
+  }
+}

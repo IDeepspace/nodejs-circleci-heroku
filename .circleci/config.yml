@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  client-test:
+    docker:
+      - image: circleci/node:10.13.0
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: run client lint
+          command: npm run lint
+      - run:
+          name: run client tests
+          command: npm run test
+
+  deploy-staging:
+    working_directory: ~/repo
+    docker:
+      - image: docker:stable-git
+    steps:
+      - checkout
+      - run:
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING_APP_NAME.git HEAD:refs/heads/master
+
+  deploy-production:
+    working_directory: ~/repo
+    docker:
+      - image: docker:stable-git
+    steps:
+      - checkout
+      - run:
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD_APP_NAME.git HEAD:refs/heads/master
+
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - client-test
+      - deploy-staging:
+          requires:
+            - client-test
+          filters:
+            branches:
+              only: master
+      - hold:
+          type: approval
+          requires:
+            - deploy-staging
+      - deploy-production:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: master

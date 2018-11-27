@@ -1,0 +1,35 @@
+{
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest", "no-unsafe-innerhtml", "security"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js"]
+      }
+    ],
+
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "no-unsafe-innerhtml/no-unsafe-innerhtml": "error",
+    "security/detect-non-literal-fs-filename": "error",
+    "security/detect-non-literal-regexp": "error",
+    "security/detect-unsafe-regex": "error",
+    "security/detect-buffer-noassert": "error",
+    "security/detect-child-process": "error",
+    "security/detect-disable-mustache-escape": "error",
+    "security/detect-eval-with-expression": "error",
+    "security/detect-no-csrf-before-method-override": "error",
+    "security/detect-non-literal-require": "error",
+    "security/detect-object-injection": "error",
+    "security/detect-possible-timing-attacks": "warn",
+    "security/detect-pseudoRandomBytes": "error"
+  }
+}
