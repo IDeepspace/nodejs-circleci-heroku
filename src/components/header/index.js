@@ -11,7 +11,7 @@ class Header extends Component {
         <div className={styles.logo}>CBS Lite</div>
         <div className={styles.personalCenter}>
           <img className={styles.avatar} src={Avatar} alt="avatar" />
-          <div>xinchen</div>
+          <div>哈哈哈哈哈</div>
         </div>
       </div>
     );
