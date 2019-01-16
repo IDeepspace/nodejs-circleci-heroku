@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  logger.info(`CBD-Lite application is listening to port ${port}`);
+  logger.info(`application is listening to port ${port}`);
 });
 
 logger.info(process.env.ENV);
